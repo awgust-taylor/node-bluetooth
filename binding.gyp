@@ -8,6 +8,7 @@
         [ 'OS=="freebsd" or OS=="openbsd" or OS=="solaris" or (OS=="linux")', {
           'sources': [ 'src/linux/BluetoothSerialPort.cc', 'src/linux/DeviceINQ.cc', 'src/linux/BTSerialPortBinding.cc' ],
           'include_dirs' : [ "<!(node -e \"require('nan')\")", 'src' ],
+            'include_dirs': ["<!(node -p \"require('node-addon-api').include_dir\")"],
           'libraries': ['-lbluetooth'],
           'cflags':['-std=c++11']
         }],
